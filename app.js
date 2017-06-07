@@ -1,4 +1,20 @@
 const request = require('request');
+const yargs = require('yargs'); //need for url encoding
+
+const argv = yargs //object that stores the final parsed output
+    .options({
+        a: {
+            demand: true,
+            alias: 'address',
+            describe: 'Address to fetch weather for:',
+            string: true    //always parse as a string
+        }
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;
+
+console.log(argv);
 
 request({
     url: 'https://maps.googleapis.com/maps/api/geocode/json?address=2180%20East%2027%20Street,%20Brooklyn,%20NY',

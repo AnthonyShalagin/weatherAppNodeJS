@@ -27,4 +27,10 @@ const argv = yargs //object that stores the final parsed output
 
 // lat, lng, callback
 
-weather.getWeather(40.59880769999999, -73.9447994);
+weather.getWeather(40.59880769999999, -73.9447994, (errorMessage, weatherResults) => {
+    if (errorMessage) {
+        console.log(errorMessage);
+    } else {
+        console.log(JSON.stringify(weatherResults, undefined, 2));
+    }
+});

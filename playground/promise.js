@@ -11,14 +11,12 @@ var asyncAdd = (a,b) => {
     });
 };
 
-asyncAdd(5,7).then((res) => {
+asyncAdd(5,'7').then((res) => {
     console.log('Result: ', res);
-    return asyncAdd(res, 33);
-}, (errorMessage) => {
-    console.log(errorMessage);
+    return asyncAdd(res, 2);
 }).then((res) => {
     console.log('Should be 45', res);
-}, (errorMessage) => {
+}).catch((errorMessage) => {
     console.log(errorMessage);
 });
 

@@ -1,3 +1,7 @@
+//TODO: Add precipitation feature
+//TODO: Add default location
+
+
 const yargs = require('yargs'); //need for url encoding
 const axios = require('axios');
 
